@@ -1,0 +1,6 @@
+
+# persistent data and local credentials
+.env
+data/*.sqlite
+data/*.sqlite-*
+data/catalog-image-cache.json
