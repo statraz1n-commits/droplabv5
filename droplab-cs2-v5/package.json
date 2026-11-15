@@ -1,0 +1,16 @@
+{
+  "name": "droplab-cs2-simulator",
+  "version": "5.0.0",
+  "description": "CS2 virtual case opening simulator with secure local accounts, helpdesk, transparent luck, rare collectibles and coin cases",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check catalog.js && node --check public/app.js",
+    "test": "node --test tests/*.mjs"
+  }
+}

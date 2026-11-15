@@ -1,0 +1,51 @@
+/* V5: softer, comfortable CS-style product UI, improved readability and compact account menu */
+:root{--bg:#151923;--bg2:#171c27;--panel:#222937;--panel2:#252e3d;--stroke:#3a4355;--stroke2:#4a5165;--text:#edf0f7;--muted:#aeb7c8;--muted2:#909cb0;--lime:#c8a5e2;--lime-dark:#b78dd3;--purple:#b79cdb;--pink:#e2adc8}
+body{font-size:14px;line-height:1.6;background:#151923;letter-spacing:.002em}
+.content{max-width:1560px;padding:32px clamp(18px,3.4vw,58px) 95px}
+.nav-link{font-size:12px;padding:13px 15px}.case-name{font-size:14px}.case-subtitle{font-size:10px}.case-cost{font-size:16px}
+.hero p,.page-header p,.section-caption,.stage-note,.faq-card p{font-size:13px}
+.btn{font-size:12px;letter-spacing:.018em}.drop-pill-info b{font-size:11px}.drop-pill-info small{font-size:10px}
+.case-card{transition:transform .27s cubic-bezier(.2,.75,.3,1),border-color .27s,background .27s}
+.case-card:hover{transform:translateY(-5px)}.inventory-card:hover{transform:translateY(-3px)}
+.brand-mark{background:linear-gradient(135deg,#cfb2e8,#dbaaca);transform:none;border-radius:8px;box-shadow:0 0 20px #af91d022}
+.brand-mark span{background:#25213b}
+.case-limited{position:absolute;top:6px;left:9px;font-size:9px;padding:4px 7px;border-radius:4px;color:#f3d6e9;background:#7f537b75;border:1px solid #a481ac75}
+/* Wheel's success sector starts at the bottom, matching the marker sketch. */
+.upgrade-wheel{background:conic-gradient(from 180deg,#bd9bd4 0deg var(--win-angle),#3c4b5c var(--win-angle) 360deg)}
+.upgrade-wheel:before{background:conic-gradient(from 180deg,#aa8bc5af 0deg var(--win-angle),#293745 var(--win-angle) 360deg)}
+.upgrade-needle{transform:rotate(180deg);will-change:transform;backface-visibility:hidden;filter:drop-shadow(0 0 4px #faf7ff88)}
+.upgrade-wheel-center strong{font-size:clamp(26px,2.3vw,37px)}
+.fast-mode{border:1px solid #54526c;background:#293044;color:#d8d0e6;padding:10px 13px;border-radius:6px;font-size:10px;font-weight:800}
+.fast-mode.active{background:#735c8a;border-color:#bda0d9;color:#fff}.motion-tabs button.active{background:#665073!important}
+.upgrade-console,.case-stage,.pv3-card{box-shadow:0 12px 35px #080b1555}
+/* Persistent, non-modal account popover */
+.account-popover{position:fixed;right:clamp(12px,3.1vw,54px);top:124px;width:min(345px,calc(100vw - 24px));z-index:250;background:#202737;border:1px solid #556073;box-shadow:0 24px 65px #080c15c4;border-radius:12px;padding:15px;animation:accountIn .2s ease-out;color:#edf0f7}
+@keyframes accountIn{from{transform:translateY(-8px);opacity:0}to{transform:translateY(0);opacity:1}}
+.account-popover-head{display:flex;align-items:center;gap:12px;padding:3px 4px 12px;border-bottom:1px solid #3a4355}
+.account-popover-head .user-avatar{width:44px;height:44px;font-size:19px;border-radius:10px}
+.account-popover-head>div{min-width:0;display:grid}.account-popover-head b{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.account-popover-head small,.account-popover-luck{color:#b3bccc;font-size:11px}.account-popover-money{display:flex;justify-content:space-between;padding:14px 6px;font-weight:850;color:#e9d0f6}
+.account-popover-money span{color:#dfc4a6}.account-popover-luck{padding:0 6px 12px}
+.account-popover>button{width:100%;display:block;text-align:left;border:0;border-radius:6px;background:transparent;padding:11px 12px;color:#e5e6f0;font-size:12px}
+.account-popover>button:hover{background:#333d51}
+.auth-split{display:grid;grid-template-columns:1fr 1fr;gap:8px}.auth-split button{font-size:10px;padding:12px 6px}
+.promo-redeem{background:#202a39;border:1px solid #46546b;border-radius:10px;padding:22px;margin:24px 0 28px}.promo-redeem h3{margin:0 0 11px;font-size:19px}
+.promo-redeem>small{font-size:11px;color:#aab6c5}.promo-form{display:flex;gap:9px;max-width:650px;margin:8px 0}.promo-list{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.promo-chip{border:1px solid #615778;background:#312d45;color:#e1cee9;padding:5px 10px;border-radius:5px;font-size:11px}
+.promo-wins{border:1px solid #8f70ac;background:#302940;padding:11px 13px;border-radius:9px;margin:12px 0;color:#e9d6f4;font-size:12px}.promo-wins>div{margin-top:7px}
+.promo-wins code{font-size:13px;color:#f2d2ff}.promo-wins small{display:block;color:#c8b0d5}
+.pv3-luck{font-size:11px;color:#acb7c6;padding:8px 10px}.pv3-luck b{color:#eac9ff}.pv3-luck small{display:block;color:#7f90a4}
+.admin-under{display:block;font-size:9px;color:#7c889b;margin-top:2px}
+.admin-controls{grid-template-columns:1.3fr .65fr .75fr .65fr auto}
+.admin-controls .btn{align-self:end;min-height:42px}.admin-info{background:#2c2939;border-color:#5b4c70;color:#d6c7e5}
+.mini-btn{background:#342a41;border-color:#725881;color:#eacfff;margin:2px}
+.support-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:15px}.support-panel{border:1px solid #3b465a;background:#202836;border-radius:10px;padding:22px;min-width:0}
+.support-panel h2{font-size:18px;margin:0 0 14px}.support-panel h2:not(:first-child){margin-top:25px}
+.support-panel textarea.input{resize:vertical;min-height:90px}.ticket-list{display:grid;gap:7px;max-height:360px;overflow:auto}
+.ticket-row{display:grid;gap:3px;text-align:left;background:#2b3444;border:1px solid #445166;color:#e6e8f1;border-radius:6px;padding:12px}
+.ticket-row small{color:#a6b3c2;font-size:11px}.ticket-row.active,.ticket-row:hover{border-color:#b18bd0;background:#413650}
+.ticket-messages{max-height:420px;overflow-y:auto;display:grid;align-content:start;gap:11px;margin:18px 0}
+.ticket-message{padding:12px;border:1px solid #485165;border-radius:8px;background:#293243;max-width:95%}
+.ticket-message.own{background:#40364e;margin-left:auto}.ticket-message p{white-space:pre-wrap;margin:5px 0;font-size:12px}.ticket-message small{font-size:10px;color:#b5aec2}.support-empty{padding:60px 10px;text-align:center;color:#99a9b9}
+@media(max-width:1200px){.admin-controls{grid-template-columns:1fr 1fr}.admin-controls .btn{align-self:stretch}.content{padding:24px 22px 75px}}
+@media(max-width:750px){.content{padding:20px 13px 75px}.nav-link{padding:7px 4px;font-size:9px}.case-name{font-size:12px}.support-layout{grid-template-columns:1fr}.promo-form{flex-wrap:wrap}.account-popover{top:63px;right:9px}.upgrade-console-bottom{gap:10px}}

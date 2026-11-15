@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0d0918" />
+<meta name="description" content="DROPLAB — бесплатный симулятор открытия кейсов CS2. Виртуальные кредиты, коллекция скинов, Steam OpenID." />
+<title>DROPLAB V5 — CS2 Case Simulator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="/neon.css" />
+<link rel="stylesheet" href="/refined.css" />
+<link rel="stylesheet" href="/v5.css" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<script src="/app.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+ <aside class="sidebar">
+  <a href="#home" class="brand" data-action="navigate" data-view="home" aria-label="DROPLAB главная">
+    <span class="brand-mark"><span></span><span></span><span></span></span>
+    <span class="brand-name">DROP<span>LAB</span><small>CS2 CASE SIMULATOR 5.0</small></span>
+  </a>
+  <div class="side-section-label">НАВИГАЦИЯ</div>
+  <nav class="side-nav" id="side-nav" aria-label="Навигация">
+    <button class="nav-link active" data-action="navigate" data-view="home"><span class="nav-ico">▦</span> Главная <span class="nav-end">›</span></button>
+    <button class="nav-link" data-action="navigate" data-view="cases"><span class="nav-ico">◈</span> Все кейсы <span class="nav-end" id="case-count">83</span></button>
+    <button class="nav-link" data-action="navigate" data-view="coins"><span class="nav-ico">✦</span> Кейсы за монеты <span class="nav-end">NEW</span></button>
+    <button class="nav-link" data-action="navigate" data-view="inventory"><span class="nav-ico">▤</span> Мой профиль</button>
+    <button class="nav-link" data-action="navigate" data-view="upgrade"><span class="nav-ico">⚡</span> Апгрейдер</button>
+    <button class="nav-link" data-action="navigate" data-view="contracts"><span class="nav-ico">◆</span> Контракты</button>
+    <button class="nav-link" data-action="navigate" data-view="leaders"><span class="nav-ico">♛</span> Топ игроков</button>
+    <button class="nav-link" data-action="navigate" data-view="support"><span class="nav-ico">✉</span> Поддержка</button>
+    <button class="nav-link" data-action="navigate" data-view="faq"><span class="nav-ico">☷</span> Как играть</button>
+    <button class="nav-link hidden" id="admin-nav" data-action="navigate" data-view="admin"><span class="nav-ico">⚙</span> Админ-панель</button>
+  </nav>
+  <div class="side-divider"></div>
+  <div class="side-section-label">ТВОЙ АККАУНТ</div>
+  <div class="side-account" id="side-account"><div class="account-placeholder">Войди, чтобы сохранять<br>свои дропы и баланс</div></div>
+  <div class="sidebar-spacer"></div>
+  <div class="bonus-box" id="bonus-box">
+    <span class="bonus-stars">✦ ✧</span>
+    <div class="bonus-title">ЕЖЕДНЕВНЫЙ БОНУС</div>
+    <p>Забери <strong>+200 CR</strong> и открывай новые кейсы</p>
+    <button class="bonus-btn" data-action="bonus">Забрать бонус <span>↗</span></button>
+  </div>
+  <div class="sidebar-footer"><span class="green-dot"></span> ВИРТУАЛЬНЫЙ СИМУЛЯТОР<br><small>Не связано с Valve / Steam</small></div>
+ </aside>
+ <div class="workspace">
+  <header class="topbar">
+   <div class="topbar-left"><span class="topbar-path">DROPZONE</span><span class="topbar-slash">/</span><span id="page-crumb">ГЛАВНАЯ</span></div>
+   <div class="topbar-right"><button class="sound-header-btn" id="global-sound" data-action="sound-global" aria-label="Выключить звуки">♪ Звук</button><span class="online-flag"><span class="pulse-dot"></span> АККАУНТОВ <strong id="online-count">0</strong></span>
+    <button class="coin-pill" id="coin-pill" data-action="navigate" data-view="coins"><span>✦</span> <b id="coin-value">0</b></button>
+    <button class="wallet-pill" id="wallet-pill" data-action="wallet"><span class="wallet-icon">◈</span><span id="wallet-value">1 500</span><small> CR</small><span class="wallet-plus">+</span></button>
+    <button class="user-pill" id="user-pill" data-action="account"><span class="user-avatar" id="header-avatar">?</span><span id="header-username">Войти</span><span class="user-caret">⌄</span></button>
+   </div>
+  </header>
+  <section class="ticker-wrap" aria-label="Симулированная лента выпадений">
+   <div class="ticker-label"><span class="ticker-flash">◉</span><b>DROP FEED</b><small>БОТЫ + ИГРОКИ</small></div>
+   <div class="ticker-window"><div class="ticker-track" id="ticker-track"></div></div>
+  </section>
+  <main class="content" id="view"><div class="loading-wrap"><span class="load-spinner"></span><p>Загружаем кейсы...</p></div></main>
+  <footer class="site-footer"><span>© 2026 DROPLAB. Все предметы и кредиты виртуальные. Вывод недоступен. Бесплатное пополнение игровых CR доступно внутри симулятора.</span><span>Изображения предметов CS2 принадлежат их правообладателям. <a href="https://github.com/ByMykel/CSGO-API" target="_blank" rel="noopener noreferrer">CSGO-API</a></span></footer>
+ </div>
+</div>
+<div id="modal-root"></div><div id="toast-root" aria-live="polite"></div>
+</body>
+</html>
